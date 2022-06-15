@@ -1,0 +1,30 @@
+{
+  "name": "Coachync-API-Server",
+  "version": "1.0.0",
+  "description": "This Server is built for the API Web/mobile App of Coachync Platform",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadTahaGit/Coachync-API-Server.git"
+  },
+  "author": "Jad Taha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadTahaGit/Coachync-API-Server.git/issues"
+  },
+  "homepage": "https://github.com/jadTahaGit/Coachync-API-Server.git#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "moongose": "^1.0.0",
+    "nodemon": "^2.0.16",
+    "validator": "^13.7.0"
+  }
+}
