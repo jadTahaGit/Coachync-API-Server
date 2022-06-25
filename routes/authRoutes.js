@@ -9,11 +9,11 @@ import {
 } from '../controllers/authController.js';
 const router = Router();
 
-router.get('/api/signup', getUsers);
+router.get('/api/users', getUsers);
 router.post('/api/signup', signup_post);
 router.get('/api/login', login_get);
 router.post('/api/login', login_post);
 router.get('/api/logout', logout_get);
-router.get('/api/servies', getServices);
+router.get('/api/services', getServices);
 
 export default router;
