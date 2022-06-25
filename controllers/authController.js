@@ -57,10 +57,20 @@ export const signup_post = async (req, res) => {
       httpOnly: true,
       maxAge: maxAge * 1000,
     });
-    res.status(201).json({ user: user._id });
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Signed UP!',
+      result: { user: user._id },
+    });
   } catch (err) {
     const errors = handleErrors(err);
-    res.status(400).json({ errors });
+    res.status(400).json({
+      code: 400,
+      success: false,
+      message: 'Failed to Login In',
+      result: { errors },
+    });
   }
 };
 
@@ -74,10 +84,20 @@ export const login_post = async (req, res) => {
       httpOnly: true,
       maxAge: maxAge * 1000,
     });
-    res.status(201).json({ user: user._id });
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Loged In!',
+      result: { user: user._id },
+    });
   } catch (error) {
     const errors = handleErrors(error);
-    res.status(400).json({ errors });
+    res.status(400).json({
+      code: 400,
+      success: false,
+      message: 'Failed to Login In',
+      result: { errors },
+    });
   }
 };
 
