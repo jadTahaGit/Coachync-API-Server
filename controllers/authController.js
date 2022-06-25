@@ -36,27 +36,27 @@ const createToken = (id) => {
   });
 };
 
-export const getUsers = (req, res) => {
-  try {
-    const users = await User.find();
-    res.status(201).json({
-      code: 201,
-      success: true,
-      message: 'successfully Loged Out!',
-      result: {
-        users,
-      },
-      redirect: '/',
-    });
-  } catch (err) {
-    const errors = handleErrors(err);
-    res.status(400).json({
-      code: 400,
-      success: false,
-      message: 'Failed to get users',
-      result: { errors },
-    });
-};
+// export const getUsers = (req, res) => {
+//   try {
+//     const users = await User.find();
+//     res.status(201).json({
+//       code: 201,
+//       success: true,
+//       message: 'successfully Got The Users!',
+//       result: {
+//         users
+//       },
+//       redirect: '/',
+//     });
+//   } catch (err) {
+//     const errors = handleErrors(err);
+//     res.status(400).json({
+//       code: 400,
+//       success: false,
+//       message: 'Failed to get users',
+//       result: { errors },
+//     });
+// };
 
 export const login_get = (req, res) => {
   console.log('login_get');
@@ -146,4 +146,27 @@ export const getServices = async (req, res) => {
       redirect: '/',
     });
   } catch {}
+};
+
+export const addService = async (req, res) => {
+  const {
+    Overview: { title },
+  } = req.body;
+  try {
+    const service = await Service.create({ Overview: { title } });
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Added!',
+      result: { service: service._id },
+    });
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({
+      code: 400,
+      success: false,
+      message: 'Failed to Add the Service',
+      result: { errors },
+    });
+  }
 };
