@@ -14,8 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // database connection
-const dbURI =
-  'mongodb+srv://jadtaha:8JlOTrtdfH1u@cluster0.imrf7.mongodb.net/node-auth?';
+const dbURI = process.env.ATLAS_URI;
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
@@ -24,13 +23,15 @@ mongoose
   })
   .then((result) => {
     console.log('DB connected Successfully');
-    console.log('Listining on Server 4001');
-    app.listen(process.env.PORT || 4001);
+    console.log(`Listining on Server ${process.env.PORT}`);
+    app.listen(process.env.PORT || 3001);
   })
   .catch((err) => console.log(err));
 
 // routes
-// app.get('*', checkUser);
-// app.get('/', (req, res) => res.render('home'));
-// app.get('/jutsus', requireAuth, (req, res) => res.render('jutsus'));
-// app.use(authRoutes);
+app.get('*', checkUser);
+app.get('/', (req, res) => res.send('Welcome To Coachync API'));
+app.get('/api/profile', requireAuth, (req, res) =>
+  res.send('Here are the posts')
+);
+app.use(authRoutes);

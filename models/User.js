@@ -15,6 +15,48 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Please enter an Email'],
     minlength: [6, 'Minimum password length is a 6 charachtars'],
   },
+  birthDay: {
+    type: Date,
+  },
+  email__verified: {
+    type: Boolean,
+  },
+  category: {
+    type: String,
+  },
+  phoneNumber: {
+    type: Number,
+  },
+  isCoach: {
+    type: Boolean,
+  },
+  languages: {
+    type: String,
+  },
+  description: {
+    type: String,
+  },
+  rating: {
+    type: Number,
+  },
+  level: {
+    type: Number,
+  },
+  percatageOfCompletion: {
+    type: Number,
+  },
+  Country: {
+    type: String,
+  },
+  AccountCreationDate: {
+    type: Date,
+  },
+  AvgResponseTime: {
+    type: Number,
+  },
+  lastSession: {
+    type: Number,
+  },
 });
 
 // hash the password
