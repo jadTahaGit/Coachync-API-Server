@@ -13,5 +13,6 @@ router.post('/api/signup', signup_post);
 router.get('/api/login', login_get);
 router.post('/api/login', login_post);
 router.get('/api/logout', logout_get);
+router.get('/api/servies', getServices);
 
 export default router;

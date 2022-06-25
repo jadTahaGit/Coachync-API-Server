@@ -1,4 +1,5 @@
 import User from '../models/User.js';
+import Services from '../models/Services.js';
 import JWT from 'jsonwebtoken';
 
 // handle errors
@@ -36,7 +37,18 @@ const createToken = (id) => {
 };
 
 export const signup_get = (req, res) => {
-  res.render('signup');
+  try {
+    const services = await Services.find();
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Loged Out!',
+      result: {
+        services,
+      },
+      redirect: '/',
+    });
+  } catch {}
 };
 
 export const login_get = (req, res) => {
@@ -109,6 +121,21 @@ export const logout_get = async (req, res) => {
       success: true,
       message: 'successfully Loged Out!',
       result: {},
+      redirect: '/',
+    });
+  } catch {}
+};
+
+export const getServices = async (req, res) => {
+  try {
+    const services = await Services.find();
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Loged Out!',
+      result: {
+        services,
+      },
       redirect: '/',
     });
   } catch {}
