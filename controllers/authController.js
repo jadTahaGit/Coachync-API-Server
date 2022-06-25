@@ -48,7 +48,14 @@ export const getUsers = (req, res) => {
       },
       redirect: '/',
     });
-  } catch {}
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({
+      code: 400,
+      success: false,
+      message: 'Failed to get users',
+      result: { errors },
+    });
 };
 
 export const login_get = (req, res) => {
