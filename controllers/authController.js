@@ -36,27 +36,28 @@ const createToken = (id) => {
   });
 };
 
-// export const getUsers = (req, res) => {
-//   try {
-//     const users = await User.find();
-//     res.status(201).json({
-//       code: 201,
-//       success: true,
-//       message: 'successfully Got The Users!',
-//       result: {
-//         users
-//       },
-//       redirect: '/',
-//     });
-//   } catch (err) {
-//     const errors = handleErrors(err);
-//     res.status(400).json({
-//       code: 400,
-//       success: false,
-//       message: 'Failed to get users',
-//       result: { errors },
-//     });
-// };
+export const getUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(201).json({
+      code: 201,
+      success: true,
+      message: 'successfully Got The Users!',
+      result: {
+        users,
+      },
+      redirect: '/',
+    });
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({
+      code: 400,
+      success: false,
+      message: 'Failed to get users',
+      result: { errors },
+    });
+  }
+};
 
 export const login_get = (req, res) => {
   console.log('login_get');

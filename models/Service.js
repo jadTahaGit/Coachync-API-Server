@@ -27,6 +27,6 @@ const serviceSchema = new mongoose.Schema({
   Reviews: {},
 });
 
-const Service = mongoose.model('services', serviceSchema);
+const Service = mongoose.model('services', userSchema);
 
-export default Service;
+export default User;

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import {
-  // getUsers,
+  getUsers,
   login_get,
   signup_post,
   login_post,
@@ -10,7 +10,7 @@ import {
 } from '../controllers/authController.js';
 const router = Router();
 
-// router.get('/api/users', getUsers);
+router.get('/api/users', getUsers);
 router.post('/api/signup', signup_post);
 router.get('/api/login', login_get);
 router.post('/api/login', login_post);
