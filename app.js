@@ -33,7 +33,8 @@ mongoose
 
 // routes
 app.get('*', checkUser);
-app.get('/', (req, res) => res.send('Welcome To Coachync API'));
+app.get('/', (req, res) => res.render('home'));
+app.get('/doc', (req, res) => res.render('doc'));
 app.get('/api/profile', requireAuth, (req, res) =>
   res.send('Here are the posts')
 );

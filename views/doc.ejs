@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+
+<div class="doc">
+  <h2>login API</h2>
+  <table>
+    <tr>
+      <td>URL:</td>
+      <td>https://api-coachync.herokuapp.com/api/login</td>
+    </tr>
+    <tr>
+      <td>Method:</td>
+      <td>POST</td>
+    </tr>
+
+    <tr>
+      <td>Body:</td>
+      <td>{ "email": "alijado21@co.com", "password": "jad123123" }</td>
+    </tr>
+
+    <tr>
+      <td>Success Response:</td>
+      <td class="code">
+        { "code": 201, "success": true, "message": "successfully Loged In!",
+        "result": { "user": "62b6e00a7efe2c876d4873a2" } }
+      </td>
+    </tr>
+  </table>
+</div>
+
+<%- include('./partials/footer'); -%>
