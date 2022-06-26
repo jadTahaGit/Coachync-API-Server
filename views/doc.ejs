@@ -1,30 +1,119 @@
-<%- include('partials/header'); -%>
+<%-include('partials/header'); -%>
 
 <div class="doc">
-  <h2>login API</h2>
-  <table>
-    <tr>
-      <td>URL:</td>
-      <td>https://api-coachync.herokuapp.com/api/login</td>
-    </tr>
-    <tr>
-      <td>Method:</td>
-      <td>POST</td>
-    </tr>
+  <div class="method">
+    <h2>Login</h2>
+    <div class="box">
+      <table>
+        <tr>
+          <td>URL:</td>
+          <td>https://api-coachync.herokuapp.com/api/login</td>
+        </tr>
+        <tr>
+          <td>Method:</td>
+          <td>POST</td>
+        </tr>
 
-    <tr>
-      <td>Body:</td>
-      <td>{ "email": "alijado21@co.com", "password": "jad123123" }</td>
-    </tr>
+        <tr>
+          <td>Body:</td>
+          <td>{ "email": "alijado21@co.com", "password": "jad123123" }</td>
+        </tr>
 
-    <tr>
-      <td>Success Response:</td>
-      <td class="code">
-        { "code": 201, "success": true, "message": "successfully Loged In!",
-        "result": { "user": "62b6e00a7efe2c876d4873a2" } }
-      </td>
-    </tr>
-  </table>
+        <tr>
+          <td>Success Response:</td>
+          <td class="json-data">
+            { "code": 201, "success": true, "message": "successfully Loged
+            In!","result": { "user": "62b6e00a7efe2c876d4873a2" } }
+          </td>
+        </tr>
+      </table>
+      <img src="./assets/login.png" class="thumbnail" alt="" />
+    </div>
+  </div>
+  <div class="method">
+    <h2>Signup</h2>
+    <div class="box">
+      <table>
+        <tr>
+          <td>URL:</td>
+          <td>https://api-coachync.herokuapp.com/api/signup</td>
+        </tr>
+        <tr>
+          <td>Method:</td>
+          <td>POST</td>
+        </tr>
+
+        <tr>
+          <td>Body:</td>
+          <td>{ "email": "alijado21@co.com", "password": "jad123123" }</td>
+        </tr>
+
+        <tr>
+          <td>Success Response:</td>
+          <td class="json-data">
+            { "code": 201, "success": true, "message": "successfully Signed
+            UP!", "result": { "user": "62b843f0bf6e3e8bed9c9b29" } }
+          </td>
+        </tr>
+      </table>
+      <img src="./assets/signup.png" class="thumbnail" alt="" />
+    </div>
+  </div>
+  <div class="method">
+    <h2>Logout</h2>
+    <div class="box">
+      <table>
+        <tr>
+          <td>URL:</td>
+          <td>https://api-coachync.herokuapp.com/api/logout</td>
+        </tr>
+        <tr>
+          <td>Method:</td>
+          <td>POST</td>
+        </tr>
+
+        <tr>
+          <td>Body:</td>
+          <td>Empty</td>
+        </tr>
+
+        <tr>
+          <td>Success Response:</td>
+          <td class="json-data">
+            { "code": 201, "success": true, "message": "successfully Signed
+            UP!", "result": { "user": "62b843f0bf6e3e8bed9c9b29" } }
+          </td>
+        </tr>
+      </table>
+      <img src="./assets/logout.png" class="thumbnail" alt="" />
+    </div>
+  </div>
 </div>
+
+<script>
+  const data = document.querySelector('.json-data').textContent;
+  // Returns an array without its first element
+  const returnTail = (array) => {
+    array.shift();
+    return array;
+  };
+
+  const arr1 = data.split(',');
+
+  for (let i = 0; i < arr1.length; i++) {
+    arr1[i] =
+      "<span class='ligtBlue'>" +
+      arr1[i].split(':')[0] +
+      '</span>' +
+      ':' +
+      "<span class='brown'>" +
+      returnTail(arr1[i].split(':')) +
+      '</span>' +
+      '</br>';
+  }
+
+  const str = arr1.toString();
+  document.querySelector('.json-data').innerHTML = str;
+</script>
 
 <%- include('./partials/footer'); -%>
