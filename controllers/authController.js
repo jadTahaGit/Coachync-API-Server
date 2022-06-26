@@ -121,7 +121,7 @@ export const login_post = async (req, res) => {
   }
 };
 
-export const logout_post = async (req, res) => {
+export const logout_get = async (req, res) => {
   try {
     const clearCookie = await res.cookie('access_token', '', { maxAge: 1 });
     res.status(201).json({
