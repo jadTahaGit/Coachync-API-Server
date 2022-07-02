@@ -88,6 +88,43 @@
       <img src="./assets/logout.png" class="thumbnail" alt="" />
     </div>
   </div>
+  <div class="method">
+    <h2>User Data</h2>
+    <div class="box">
+      <table>
+        <tr>
+          <td>URL:</td>
+          <td>
+            https://api-coachync.herokuapp.com/userdata/:id
+            <br />
+            <br />
+            <b> example: </b>
+            https://api-coachync.herokuapp.com/userdata/62b6cb3e3cba24d3f9ed95a2
+          </td>
+        </tr>
+        <tr>
+          <td>Method:</td>
+          <td>GET</td>
+        </tr>
+        <tr>
+          <td>Body:</td>
+          <td>Empty</td>
+        </tr>
+
+        <tr>
+          <td>Success Response:</td>
+          <td class="json-data">
+            { "code": 201, "success": true, "message": "successfully Got The
+            Users!", "result": { "users": [ { "_id": "62b6cb3e3cba24d3f9ed95a2",
+            "email": "alijado@co.com", "password":
+            "$2b$10$7tskQwckKy3rXzHm.hwBP.E/RmZvadrO7s4wsrMVCQvLU8pK8m//K",
+            "__v": 0 } ] }, "redirect": "/" }
+          </td>
+        </tr>
+      </table>
+      <img src="./assets/userData.png" class="thumbnail" alt="" />
+    </div>
+  </div>
 </div>
 
 <script>
