@@ -7,10 +7,12 @@ import {
   logout_get,
   getServices,
   addService,
+  getUserData,
 } from '../controllers/authController.js';
 const router = Router();
 
 router.get('/api/users', getUsers);
+router.get('/api/userData/:id', getUserData);
 router.post('/api/signup', signup_post);
 router.get('/api/login', login_get);
 router.post('/api/login', login_post);
