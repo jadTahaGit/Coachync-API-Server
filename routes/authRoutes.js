@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from "express";
 import {
   getUsers,
   login_get,
@@ -8,16 +8,16 @@ import {
   getServices,
   addService,
   getUserData,
-} from '../controllers/authController.js';
+} from "../controllers/authController.js";
 const router = Router();
 
-router.get('/api/users', getUsers);
-router.get('/api/userData/:id', getUserData);
-router.post('/api/signup', signup_post);
-router.get('/api/login', login_get);
-router.post('/api/login', login_post);
-router.get('/api/logout', logout_get);
-router.get('/api/services', getServices);
-router.get('/api/addservice', addService);
+router.get("/api/users", getUsers);
+router.get("/api/userData/:id", getUserData);
+router.post("/api/signup", signup_post);
+router.get("/api/login", login_get);
+router.post("/api/login", login_post);
+router.get("/api/logout", logout_get);
+router.get("/api/services", getServices);
+router.get("/api/addservice", addService);
 
 export default router;
